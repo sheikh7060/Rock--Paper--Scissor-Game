@@ -5,22 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissor Game</title>
 </head>
+
+<html>
+    
 <body>
 
-    <button onclick="computerMovePicked();">Rock</button>
-    <button onclick="computerMovePicked();">Paper</button>
-    <button onclick="computerMovePicked();">Scissor</button>
-
-    
- 
-
+    <button onclick="playGame('Rock');">Rock</button>
+    <button onclick="playGame('Paper');">Paper</button>
+    <button onclick="playGame('Scissor');">Scissor</button>
     
 </body>
 
-
-
 <script>
 
+    function playGame(playerMove){
+
+        const computerMove = computerMovePicked();
+
+        let result;
+
+        if(playerMove ==='Rock'){
+
+            if(computerMove === 'Rock'){
+                result = 'Match Is Tie';
+            }else if(computerMove ==='Paper'){
+                result = 'You Lose The Match';
+            }else if (computerMove ==='Scissor'){
+                result = 'You win The Match';
+            }
+
+
+        }else if(playerMove ==='Paper'){
+
+            if(computerMove === 'Rock'){
+                result = 'You Win The Match';
+            }else if(computerMove ==='Paper'){
+                result = 'Match Is Tie';
+            }else if (computerMove ==='Scissor'){
+                result = 'You Lose The Match';
+            }
+
+        }else if(playerMove ==='Scissor'){
+
+            if(computerMove === 'Rock'){
+                result = 'You Lose The Match';
+            }else if(computerMove ==='Paper'){
+                result = 'You Win The Match';
+            }else if (computerMove ==='Scissor'){
+                result = 'Match Is Tie';
+            }
+        }
+    alert(`You Picked ${playerMove} and Computer Picked ${computerMove}.The Result Is:${result} `);
+
+}
     let computerMovePick;
 
     function computerMovePicked(){
@@ -29,23 +66,17 @@
 
         if(computerMovePick>0 && computerMovePick<1/3){
 
-        console.log('Rock');
+        return 'Rock';
 
         }else if(computerMovePick>1/3 && computerMovePick<2/3){
 
-        console.log('Paper');
+        return 'Paper';
 
         }else if (computerMovePick>2/3 && computerMovePick<1){
 
-        console.log('Scissor');
-
+        return 'Scissor';
         }  
-
-}
+    }
 </script>
-
-
-
-    
 
 </html>
