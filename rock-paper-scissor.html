@@ -7,70 +7,45 @@
 </head>
 <body>
 
-    <button onclick="
+    <button onclick="computerMovePicked();">Rock</button>
+    <button onclick="computerMovePicked();">Paper</button>
+    <button onclick="computerMovePicked();">Scissor</button>
 
-    let computerMovePick = Math.random();
-
-    if(computerMovePick>0 && computerMovePick<1/3){
-
-        console.log('Rock');
-
-    }else if(computerMovePick>1/3 && computerMovePick<2/3){
-
-        console.log('Paper');
-
-    }else if (computerMovePick>2/3 && computerMovePick<1){
-
-        console.log('Scissor');
-
-    }  
-    "   
-
-    >Rock</button>
-
-
-    <button onclick="
     
-    computerMovePick = Math.random();
-
-    if(computerMovePick>0 && computerMovePick<1/3){
-
-        console.log('Rock');
-
-    }else if(computerMovePick>1/3 && computerMovePick<2/3){
-
-        console.log('Paper');
-
-    }else if (computerMovePick>2/3 && computerMovePick<1){
-
-        console.log('Scissor');
-
-    } 
-    
-    ">Paper</button>
-    
-    <button onclick="
-    
-    computerMovePick = Math.random();
-
-    if(computerMovePick>0 && computerMovePick<1/3){
-
-        console.log('Rock');
-
-    }else if(computerMovePick>1/3 && computerMovePick<2/3){
-
-        console.log('Paper');
-
-    }else if (computerMovePick>2/3 && computerMovePick<1){
-
-        console.log('Scissor');
-
-    } 
-      
-    ">Scissor</button>
-
-
+ 
 
     
 </body>
+
+
+
+<script>
+
+    let computerMovePick;
+
+    function computerMovePicked(){
+
+        computerMovePick = Math.random();
+
+        if(computerMovePick>0 && computerMovePick<1/3){
+
+        console.log('Rock');
+
+        }else if(computerMovePick>1/3 && computerMovePick<2/3){
+
+        console.log('Paper');
+
+        }else if (computerMovePick>2/3 && computerMovePick<1){
+
+        console.log('Scissor');
+
+        }  
+
+}
+</script>
+
+
+
+    
+
 </html>
