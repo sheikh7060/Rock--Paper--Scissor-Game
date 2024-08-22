@@ -13,12 +13,19 @@
     <button onclick="playGame('Rock');">Rock</button>
     <button onclick="playGame('Paper');">Paper</button>
     <button onclick="playGame('Scissor');">Scissor</button>
+    <button onclick="resetScore();">Reset Score</button>
     
 </body>
 
 <script>
 
-    function playGame(playerMove){
+    const score = {
+        wins:0,
+        lose:0,
+        tie:0
+    }
+
+      function playGame(playerMove){
 
         const computerMove = computerMovePicked();
 
@@ -31,7 +38,7 @@
             }else if(computerMove ==='Paper'){
                 result = 'You Lose The Match';
             }else if (computerMove ==='Scissor'){
-                result = 'You win The Match';
+                result = 'You Win The Match';
             }
 
 
@@ -55,7 +62,26 @@
                 result = 'Match Is Tie';
             }
         }
-    alert(`You Picked ${playerMove} and Computer Picked ${computerMove}.The Result Is:${result} `);
+
+
+        if(result === 'You Win The Match'){
+
+            score.wins ++;
+
+        }else if (result === 'You Lose The Match'){
+            score.lose++;
+            
+        }else if (result ==='Match Is Tie'){
+            score.tie++;
+        }
+
+    alert(`You Picked ${playerMove} and Computer Picked ${computerMove}.The Result Is:${result}
+  
+    Wins:${score.wins},
+    Lose:${score.lose},
+    Tie:${score.tie}
+     
+    `);
 
 }
     let computerMovePick;
@@ -77,6 +103,18 @@
         return 'Scissor';
         }  
     }
+
+
+    function resetScore(){
+
+        score.wins = 0,
+        score.lose = 0,
+        score.tie = 0
+    }
+
+
+
+
 </script>
 
 </html>
